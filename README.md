@@ -111,6 +111,7 @@ add [variable int] [int]
 ```
 </details>
 
+<details>
 <summary>sub</summary>
 Subtracts specified int from variable
 ```
@@ -118,6 +119,7 @@ sub [variable int] [int]
 ```
 </details>
 
+<details>
 <summary>mult</summary>
 Sets variable to variable multiplied by int
 ```
@@ -125,6 +127,7 @@ mult [variable int] [int]
 ```
 </details>
 
+<details>
 <summary>neg</summary>
 Sets variable to opposite sign
 ```
