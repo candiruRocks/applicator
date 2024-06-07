@@ -1,0 +1,72 @@
+500 500
+
+bg black
+
+var x 0
+var y 0
+var xDir 3
+var yDir 7
+var customR 1
+var customRDir 1
+var steps 99999
+var count 0
+
+cvar customColor 1 0 255
+
+sub length 7
+sub width 2
+
+label loop
+  cmp steps count
+  jle exit
+
+  var x2 x
+  add x2 7
+
+  var y2 y
+  add y2 2
+
+  color customR r customColor
+  cmp customR 254
+  jge customRDirChange
+  cmp customR 0
+  je customRDirChange
+
+  add customR customRDir
+  cvar customColor customR 0 255
+
+  box x y x2 y2 customColor
+
+  cmp x length
+  jge xDirChange
+  cmp x 0
+  jl xDirChange
+
+  cmp y width
+  jge yDirChange
+  cmp y 0
+  jl yDirChange
+  
+  add x xDir
+  add y yDir
+  add x2 xDir
+  add y2 yDir
+  
+  add count 1
+  
+  goto loop
+
+label xDirChange
+  neg xDir
+  return
+
+label yDirChange
+  neg yDir
+  return
+
+label customRDirChange
+  neg customRDir
+  return
+
+label exit
+  exit 0
